@@ -1,32 +1,37 @@
-// c// class to store list of Grocery items 
+// class to store list of Grocery items 
+//Casey Rounseville
+//9O
+//11-24-2014
 import java.util.ArrayList;
 public class GroceryList
 {
-  ArrayList<String>list=new ArrayList<String>();
+  ArrayList<GroceryItem>list=new ArrayList<GroceryItem>();
   public GroceryList()
   {
     list.clear();
   }
-  public void add(String name)
+  public void add(GroceryItem item)
   {
-    list.add(name);
+    list.add(item);
   }
   public double getTotalCost()
   {
-    int j=0;
-    double totalCost=list.get(j).getCost();
-    for(int i=1;i<list.size()-1;i++)
+    GroceryItem itemA=new GroceryItem(list.get(0).name,list.get(0).quantity,list.get(0).price);
+    double totalCost=itemA.getCost();
+    for(int i=1;i<list.size();i++)
     {
-      temp+=list.get(i).getCost();
+      GroceryItem itemB=new GroceryItem(list.get(i).name,list.get(i).quantity,list.get(i).price);      
+      totalCost+=itemB.getCost();
     }
     return totalCost;
   }
   public String toString()
   {
-    String groceryList;
-    for(int i=0;i<list.size();i++)
+    String groceryList=list.get(0).toString()+"\n";
+    for(int i=1;i<list.size();i++)
     {
-      groceryList=list(i).quantity+" "+list.grt(i).name+" @ $"+list.get(i).price+"=$"+list.get(i).getCost()\n;
+      String temp=list.get(i).toString()+"\n";
+      groceryList+=temp;
     }
     return groceryList;
   }
