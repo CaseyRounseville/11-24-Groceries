@@ -1,4 +1,7 @@
 // class to represent a grocery item
+//Casey Rounseville
+//9O
+//11-24-2014
 public class GroceryItem
 {
   int quantity;
@@ -21,7 +24,7 @@ public class GroceryItem
   }
   public String toString()
   {
-    String list=quantity+" "+name+" @ $"+price+"=$"+getCost();
+    String list=quantity+" "+name+" @ $"+price+" = $"+getCost();
     return list;
   }
 }
